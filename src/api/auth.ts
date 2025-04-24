@@ -1,4 +1,5 @@
 // src/api/auth.ts
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 export const registerUser = async (userData: {
     firstName: string;
     middleName?: string;
@@ -9,7 +10,7 @@ export const registerUser = async (userData: {
     password: string;
   }) => {
     try {
-      const response = await fetch("http://localhost:5000/api/auth/register", {
+      const response = await fetch(`${baseURL}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

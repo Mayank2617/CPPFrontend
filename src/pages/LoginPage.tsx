@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 type LoginFormValues = {
   identifier: string;
@@ -37,7 +38,7 @@ const LoginPage = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch(`${baseURL}api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
