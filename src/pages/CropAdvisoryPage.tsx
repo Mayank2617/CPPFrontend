@@ -41,6 +41,7 @@ import {
 import { Sprout, TrendingUp } from 'lucide-react';
 import axios from 'axios';
 
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 type FormValues = {
   state: string;
   month: string;
@@ -95,7 +96,7 @@ const CropAdvisoryPage = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/api/advisory", requestData);
+      const response = await axios.post(`${baseURL}api/advisory`, requestData);
       const data = response.data.results;
       console.log("Response Data:", data); // Debugging line
       // Convert response to frontend format
