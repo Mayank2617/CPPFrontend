@@ -92,7 +92,7 @@ const LoginPage = () => {
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <div className="space-y-2">
-                  <Label htmlFor="identifier">Email or Phone</Label>
+                  <Label htmlFor="identifier">Phone</Label>
                   <Input
                     id="identifier"
                     type="text"
